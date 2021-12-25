@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.video.mapper.VideoDao">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.video.entity.Video">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="cover" jdbcType="VARCHAR" property="cover" />
+        <result column="videofile" jdbcType="VARCHAR" property="videoFile" />
+        <result column="type" jdbcType="VARCHAR" property="type" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="createtime" jdbcType="TIMESTAMP" property="createTime" />
+    </resultMap>
+
+    <insert id="insertVideo" parameterType="com.example.demo.video.entity.Video">
+        insert into qz_video(title,cover,videofile,type,username)
+        values (#{title},#{cover},#{videoFile},#{type},#{username})
+    </insert>
+
+</mapper>
